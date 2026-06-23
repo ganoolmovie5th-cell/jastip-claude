@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jastipin · Jasa Titip Belanja Tepercaya dari Mana Saja</title>
+  <meta name="description" content="Jastipin bantu kamu beli barang dari luar negeri dan toko favorit dengan aman, transparan, dan update real-time. Skincare, fashion, gadget, sampai snack, kami titipin sampai rumah." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Jastipin beranda">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        </span>
+        <span class="brand__name">Jastipin</span>
+      </a>
+      <nav class="nav__links" aria-label="Navigasi utama">
+        <a href="#cara-kerja">Cara Kerja</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#kenapa">Kenapa Kami</a>
+        <a href="#biaya">Biaya</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="#cara-kerja">Lihat cara kerja</a>
+        <a class="btn btn--solid" href="#kontak">Mulai Nitip</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#kenapa">Kenapa Kami</a>
+      <a href="#biaya">Biaya</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--solid btn--block" href="#kontak">Mulai Nitip</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Jasa titip belanja sejak 2019</p>
+          <h1 class="hero__title">Titip barang favoritmu, dari belahan dunia mana pun.</h1>
+          <p class="hero__lead">Mau skincare Korea, sneakers Jepang, atau gadget yang belum masuk Indonesia? Kasih linknya, sisanya biar kami yang urus. Aman, transparan, dan ada update di setiap langkah.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid btn--lg" href="#kontak">Mulai nitip sekarang</a>
+            <a class="btn btn--ghost btn--lg" href="#cara-kerja">Cara kerjanya</a>
+          </div>
+          <ul class="hero__assure">
+            <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tanpa biaya tersembunyi</li>
+            <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Update foto belanja real-time</li>
+          </ul>
+        </div>
+        <figure class="hero__media reveal">
+          <img src="assets/hero.jpg" alt="Tas belanja butik, paket siap kirim, paspor, ponsel, dan sneakers tertata di atas kain linen" width="1408" height="768" loading="eager" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Angka penting Jastipin">
+      <div class="wrap stats__row">
+        <div class="stat"><span class="stat__num" data-count="38">38</span><span class="stat__label">Negara &amp; kota asal</span></div>
+        <div class="stat"><span class="stat__num" data-count="52000">52.000+</span><span class="stat__label">Pesanan terkirim</span></div>
+        <div class="stat"><span class="stat__num" data-count="14000">14.000+</span><span class="stat__label">Pelanggan aktif</span></div>
+        <div class="stat"><span class="stat__num">4,9<span class="stat__sub">/5</span></span><span class="stat__label">Rating kepuasan</span></div>
+      </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section class="section" id="cara-kerja">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Prosesnya gampang</p>
+          <h2 class="section__title">Empat langkah, barang sampai rumah</h2>
+          <p class="section__sub">Tidak perlu pusing soal kurs, bea, atau pengiriman. Kamu cukup pilih barang, kami yang belanja dan antar.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__no">01</span>
+            <h3>Kirim link atau foto</h3>
+            <p>Tempel link produk atau foto barang yang kamu mau lewat WhatsApp. Bisa dari toko, marketplace, atau brand resmi.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">02</span>
+            <h3>Terima penawaran</h3>
+            <p>Kami hitung total harga barang, biaya titip, dan ongkir dalam Rupiah. Jelas di depan, tanpa kejutan.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">03</span>
+            <h3>Kami belanjakan</h3>
+            <p>Setelah kamu setuju dan bayar, personal shopper kami beli barangnya dan kirim foto bukti pembelian.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">04</span>
+            <h3>Diantar ke rumah</h3>
+            <p>Barang dicek, dikemas rapi, lalu dikirim dengan resi yang bisa kamu lacak sampai depan pintu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- KATEGORI (BENTO) -->
+    <section class="section section--tint" id="kategori">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title">Apa saja bisa dititip</h2>
+          <p class="section__sub">Dari rilisan terbatas sampai kebutuhan harian yang susah dicari di sini.</p>
+        </div>
+        <div class="bento">
+          <article class="tile tile--lg" style="--img:url('assets/fashion.jpg')">
+            <div class="tile__body">
+              <h3>Fashion &amp; sneakers</h3>
+              <p>Rilisan terbatas, tas branded, dan koleksi yang sold out di Indonesia.</p>
+            </div>
+          </article>
+          <article class="tile" style="--img:url('assets/beauty.jpg')">
+            <div class="tile__body">
+              <h3>Skincare &amp; beauty</h3>
+              <p>Produk Korea dan Jepang, langsung dari sumbernya.</p>
+            </div>
+          </article>
+          <article class="tile" style="--img:url('assets/gadget.jpg')">
+            <div class="tile__body">
+              <h3>Gadget &amp; elektronik</h3>
+              <p>Earbuds, jam pintar, sampai kamera yang belum rilis resmi.</p>
+            </div>
+          </article>
+          <article class="tile tile--wide" style="--img:url('assets/snacks.jpg')">
+            <div class="tile__body">
+              <h3>Snack &amp; makanan khas</h3>
+              <p>Camilan dan oleh-oleh impor favorit, dikemas aman untuk perjalanan jauh.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KENAPA KAMI -->
+    <section class="section" id="kenapa">
+      <div class="wrap split">
+        <figure class="split__media reveal">
+          <img src="assets/beauty.jpg" alt="Produk skincare tertata rapi sebelum dikemas untuk pengiriman" width="1408" height="768" loading="lazy" />
+        </figure>
+        <div class="split__copy reveal">
+          <h2 class="section__title">Dibuat untuk yang hati-hati soal titip belanja</h2>
+          <p class="section__sub">Bayar barang yang belum di tangan itu butuh kepercayaan. Kami bangun setiap proses supaya kamu tenang.</p>
+          <ul class="checklist">
+            <li>
+              <span class="checklist__ico"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>Harga transparan di awal.</strong> Rincian harga barang, biaya titip, dan ongkir disepakati sebelum kami belanja.</div>
+            </li>
+            <li>
+              <span class="checklist__ico"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>Bukti di tiap langkah.</strong> Foto struk, foto barang, sampai foto paket sebelum dikirim.</div>
+            </li>
+            <li>
+              <span class="checklist__ico"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>Garansi barang sesuai.</strong> Salah barang karena kami? Kami tanggung penggantian atau dana kembali.</div>
+            </li>
+            <li>
+              <span class="checklist__ico"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>Resi yang bisa dilacak.</strong> Pantau perjalanan paket dari gudang asal sampai rumah kamu.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIAYA -->
+    <section class="section section--tint" id="biaya">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Biaya yang jujur</p>
+          <h2 class="section__title">Cuma tiga komponen, itu saja</h2>
+          <p class="section__sub">Tidak ada biaya admin yang muncul tiba-tiba. Yang kamu lihat, itu yang kamu bayar.</p>
+        </div>
+        <div class="fees">
+          <article class="fee">
+            <h3 class="fee__name">Harga barang</h3>
+            <p class="fee__val">Sesuai toko</p>
+            <p class="fee__desc">Harga asli dikonversi ke Rupiah dengan kurs harian yang kami tampilkan apa adanya.</p>
+          </article>
+          <article class="fee fee--hi">
+            <span class="fee__tag">Paling sering dipakai</span>
+            <h3 class="fee__name">Biaya titip</h3>
+            <p class="fee__val">Mulai 5%<span class="fee__unit"> / barang</span></p>
+            <p class="fee__desc">Jasa belanja dan pengecekan oleh personal shopper. Minimal Rp25.000 per barang.</p>
+          </article>
+          <article class="fee">
+            <h3 class="fee__name">Ongkir</h3>
+            <p class="fee__val">Sesuai berat</p>
+            <p class="fee__desc">Dihitung dari berat dan tujuan pengiriman, pakai tarif kurir resmi tanpa markup.</p>
+          </article>
+        </div>
+        <p class="fees__note">Contoh: serum seharga Rp350.000, biaya titip Rp25.000, ongkir Rp40.000. Total Rp415.000, semua kelihatan sebelum kamu bayar.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="section" id="testimoni">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title">Kata mereka yang sudah nitip</h2>
+        </div>
+        <div class="quotes">
+          <figure class="quote reveal">
+            <blockquote>"Pesan toner yang selalu sold out, dikabarin tiap tahap. Sampai dalam 9 hari, packing-nya rapi banget."</blockquote>
+            <figcaption><span class="ava" aria-hidden="true">RP</span><span><strong>Rani Pratiwi</strong><small>Bandung</small></span></figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <blockquote>"Awalnya ragu titip sneakers mahal. Ternyata dikirimin foto struk dan foto barangnya dulu, jadi tenang."</blockquote>
+            <figcaption><span class="ava" aria-hidden="true">DS</span><span><strong>Dimas Saputra</strong><small>Surabaya</small></span></figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <blockquote>"Biayanya jelas dari awal, tidak ada tambahan aneh. Sekarang langganan buat stok skincare keluarga."</blockquote>
+            <figcaption><span class="ava" aria-hidden="true">CW</span><span><strong>Carissa Wijaya</strong><small>Jakarta</small></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--tint" id="faq">
+      <div class="wrap faq">
+        <div class="section__head section__head--left">
+          <p class="eyebrow">Masih ragu?</p>
+          <h2 class="section__title">Pertanyaan yang sering muncul</h2>
+        </div>
+        <div class="faq__list">
+          <details class="acc">
+            <summary>Bagaimana cara mulai nitip?</summary>
+            <p>Klik tombol Mulai Nitip, lalu kirim link atau foto barang ke WhatsApp kami. Tim akan balas dengan rincian harga dalam beberapa jam pada jam kerja.</p>
+          </details>
+          <details class="acc">
+            <summary>Apakah harus bayar penuh di depan?</summary>
+            <p>Ya, pembayaran dilakukan setelah kamu setuju dengan total biaya. Ini supaya personal shopper bisa langsung membelanjakan barang sebelum stok habis.</p>
+          </details>
+          <details class="acc">
+            <summary>Berapa lama barang sampai?</summary>
+            <p>Tergantung negara asal dan metode kirim, umumnya 7 sampai 21 hari kerja. Estimasi spesifik kami sampaikan di penawaran awal.</p>
+          </details>
+          <details class="acc">
+            <summary>Bagaimana kalau barang salah atau rusak?</summary>
+            <p>Kalau kesalahan ada di pihak kami, barang diganti atau dana dikembalikan. Untuk kerusakan dari kurir, kami bantu proses klaim asuransi pengiriman.</p>
+          </details>
+          <details class="acc">
+            <summary>Apakah semua barang bisa dititip?</summary>
+            <p>Hampir semua, kecuali barang yang dilarang masuk Indonesia atau melanggar aturan bea cukai. Kami akan kabari kalau ada kendala regulasi.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="kontak">
+      <div class="wrap cta__inner">
+        <h2 class="cta__title">Ada barang incaran? Titipin aja.</h2>
+        <p class="cta__sub">Chat kami sekarang, dapatkan rincian harga tanpa komitmen.</p>
+        <div class="cta__actions">
+          <a class="btn btn--solid btn--lg" href="https://wa.me/6281200000000?text=Halo%20Jastipin%2C%20saya%20mau%20nitip%20barang" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.18c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.37 1.46.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.71-.18 1.4Z"/></svg>
+            Chat via WhatsApp
+          </a>
+          <a class="btn btn--ghost btn--lg btn--on-dark" href="#cara-kerja">Pelajari dulu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--light" href="#top" aria-label="Jastipin beranda">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </span>
+          <span class="brand__name">Jastipin</span>
+        </a>
+        <p>Jasa titip belanja tepercaya untuk barang dari mana saja.</p>
+      </div>
+      <nav class="footer__col" aria-label="Tautan layanan">
+        <h4>Layanan</h4>
+        <a href="#cara-kerja">Cara kerja</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#biaya">Biaya titip</a>
+      </nav>
+      <nav class="footer__col" aria-label="Tautan perusahaan">
+        <h4>Perusahaan</h4>
+        <a href="#kenapa">Kenapa kami</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Kontak</h4>
+        <a href="https://wa.me/6281200000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:halo@jastipin.id">halo@jastipin.id</a>
+      </div>
+    </div>
+    <div class="wrap footer__base">
+      <p>&copy; <span id="year">2026</span> Jastipin. Dibuat untuk pembeli yang teliti.</p>
+      <p class="footer__note">Nomor dan alamat email di atas masih contoh, ganti dengan milikmu.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

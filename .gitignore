@@ -1,0 +1,10 @@
+# Preview / screenshots (local QA only)
+.preview/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
