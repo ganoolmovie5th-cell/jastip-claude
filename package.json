@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "Landing page untuk layanan **jasa titip (jastip)** belanja, dibuat sebagai situs statis ringan tanpa proses build. Konsep, copy, dan desain dibangun berdasarkan riset model bisnis jastip di Indonesia: pembeli menitipkan barang yang sulit didapat (skincare, fashion, gadget, snack impor) kepada personal shopper, lalu membayar harga barang ditambah biaya titip dan ongkir.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganoolmovie5th-cell/jastip-claude.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganoolmovie5th-cell/jastip-claude/issues"
+  },
+  "homepage": "https://github.com/ganoolmovie5th-cell/jastip-claude#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
