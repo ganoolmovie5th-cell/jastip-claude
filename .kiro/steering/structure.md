@@ -4,50 +4,60 @@
 
 ```
 jastip-claude/
-├── index.html        # Seluruh markup halaman, satu file
+├── index.html        # Markup halaman + semua tag tracking (GA, GTM, Vercel)
 ├── styles.css        # Semua styling + token desain di :root
-├── app.js            # Interaksi: nav sticky, menu mobile, scroll-reveal, tahun footer
-├── assets/           # Aset gambar lokal
-│   ├── hero.jpg      # Flat-lay hero (tas, paket, paspor, sneakers)
-│   ├── beauty.jpg    # Kategori skincare & beauty + dipakai di section "Kenapa Kami"
-│   ├── fashion.jpg   # Kategori fashion & sneakers
-│   ├── gadget.jpg    # Kategori gadget & elektronik
-│   └── snacks.jpg    # Kategori snack & makanan
-├── README.md         # Dokumentasi proyek & cara deploy
-├── AGENTS.md         # Steering utama untuk semua agent
-├── CLAUDE.md         # Steering khusus Claude (mengarah ke AGENTS.md)
-└── .kiro/steering/   # Steering terstruktur (product, tech, structure)
+├── app.js            # Interaksi: nav sticky, menu mobile, scroll-reveal
+├── sitemap.xml       # Sitemap SEO → https://jastip-in.web.id/sitemap.xml
+├── callback.html     # Redirect OAuth Google untuk app mobile (jastip-mobile-claude)
+├── favicon.svg       # Favicon branded
+├── assets/
+│   ├── hero.jpg
+│   ├── beauty.jpg
+│   ├── fashion.jpg
+│   ├── gadget.jpg
+│   └── snacks.jpg
+├── README.md
+├── AGENTS.md
+├── CLAUDE.md
+└── .kiro/steering/
+    ├── product.md
+    ├── tech.md
+    └── structure.md
 ```
 
 ## Urutan section di `index.html`
 
-1. `header.nav` - navigasi sticky + menu mobile.
-2. `section.hero` - judul, lead, CTA, gambar hero.
-3. `section.stats` - empat angka kepercayaan (panel teal).
-4. `#cara-kerja` - empat langkah proses.
-5. `#kategori` - bento grid kategori barang (pakai gambar `assets/`).
-6. `#kenapa` - split gambar + checklist kepercayaan.
-7. `#biaya` - tiga komponen biaya, kartu tengah di-highlight.
-8. `#testimoni` - tiga kartu testimoni.
-9. `#faq` - accordion `<details>`.
-10. `section.cta#kontak` - ajakan akhir ke WhatsApp.
-11. `footer.footer` - tautan, kontak, hak cipta.
+1. `header.nav` — navigasi sticky + menu mobile
+2. `section.hero` — judul, lead, CTA, gambar hero
+3. `section.stats` — angka kepercayaan
+4. `#cara-kerja` — empat langkah proses
+5. `#kategori` — bento grid kategori
+6. `#kenapa` — split gambar + checklist
+7. `#biaya` — tiga komponen biaya
+8. `#testimoni` — kartu testimoni
+9. `#faq` — accordion `<details>`
+10. `section.cta#kontak` — ajakan WhatsApp
+11. `footer.footer` — tautan, kontak, hak cipta
 
-## Aturan menambah section baru
+## Tentang `callback.html`
 
-- Variasikan layout. Jangan pakai pola gambar-kiri-teks-kanan beruntun lebih dari dua kali.
-- Tetap satu tema light (kecuali CTA dan footer yang gelap).
-- Tambahkan ke navigasi (`nav__links` dan `nav__mobile`) bila relevan, dan jaga nav tetap satu baris di desktop.
-- Pakai kelas `reveal` untuk animasi masuk agar konsisten.
+Halaman redirect OAuth Google untuk `jastip-mobile-claude`. Alurnya:
 
-## Yang tidak boleh di-commit
+1. App mobile kirim request OAuth dengan `redirect_uri = https://jastip-in.web.id/callback.html`
+2. Google redirect ke halaman ini dengan `#access_token=xxx&state=exp://...`
+3. Script baca token, redirect ke `state` URL (`exp://` deep link Expo Go)
+4. Expo Go intercept → login selesai
 
-- Folder pratinjau atau screenshot sementara (mis. `.preview/`).
-- File sistem (`.DS_Store`, dsb).
-- Dependensi atau artefak build (tidak ada build step).
+Jangan hapus atau ubah script di `callback.html`.
 
 ## Titik konfigurasi penting
 
-- Nomor WhatsApp: dua tempat di `index.html` (tombol CTA dan footer), format `62...`.
-- Email kontak: footer `index.html`.
-- Token desain: blok `:root` di `styles.css`.
+| Apa | Di mana |
+|-----|---------|
+| Nomor WhatsApp | `index.html` — tombol CTA dan footer |
+| Email kontak | `index.html` — footer |
+| Token desain | `styles.css` — blok `:root` |
+| GA4 ID | `index.html` — `G-PH1XJC9W3B` |
+| GTM ID | `index.html` — `GTM-WQ3THMWQ` |
+| Domain canonical | `index.html` — `https://jastip-in.web.id/` |
+| Sitemap URL | `sitemap.xml` — `https://jastip-in.web.id/` |
