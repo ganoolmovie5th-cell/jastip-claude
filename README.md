@@ -2,6 +2,8 @@
 
 Landing page untuk layanan **jasa titip (jastip)** belanja, dibuat sebagai situs statis ringan tanpa proses build. Konsep, copy, dan desain dibangun berdasarkan riset model bisnis jastip di Indonesia: pembeli menitipkan barang yang sulit didapat (skincare, fashion, gadget, snack impor) kepada personal shopper, lalu membayar harga barang ditambah biaya titip dan ongkir.
 
+**Live:** [https://jastip-in.web.id](https://jastip-in.web.id)
+
 ![Pratinjau Jastipin](assets/hero.jpg)
 
 ## Kenapa situs ini ada
@@ -23,61 +25,65 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 - Aksesibilitas dasar: skip link, kontras warna AA, atribut alt, dan label ARIA.
 - Gambar produk dihasilkan khusus, disimpan lokal di `assets/`.
 
+## Analytics & Tracking
+
+| Tools | ID | Keterangan |
+|-------|----|------------|
+| Google Analytics 4 | `G-PH1XJC9W3B` | Event & konversi |
+| Google Tag Manager | `GTM-WQ3THMWQ` | Container tag terpusat |
+| Vercel Web Analytics | Auto | Page views & Web Vitals |
+
+## SEO
+
+- `sitemap.xml` tersedia di: `https://jastip-in.web.id/sitemap.xml`
+- Tag `<link rel="canonical">` mengarah ke `https://jastip-in.web.id/`
+- Daftarkan sitemap ke [Google Search Console](https://search.google.com/search-console)
+
 ## Struktur proyek
 
 ```
 jastip-claude/
-├── index.html              # Struktur seluruh halaman
+├── index.html              # Markup + semua tag tracking (GA, GTM, Vercel)
 ├── styles.css              # Design system + seluruh styling
 ├── app.js                  # Nav, menu mobile, scroll-reveal
-├── assets/                 # Gambar (hero + 4 kategori)
+├── sitemap.xml             # Sitemap untuk SEO
+├── callback.html           # Redirect OAuth Google (untuk app mobile)
+├── favicon.svg             # Favicon branded
+├── assets/                 # Gambar produk lokal
 │   ├── hero.jpg
 │   ├── beauty.jpg
 │   ├── fashion.jpg
 │   ├── gadget.jpg
 │   └── snacks.jpg
 ├── README.md
-├── AGENTS.md               # Steering file untuk semua AI agent
-├── CLAUDE.md               # Steering file khusus Claude (mengarah ke AGENTS.md)
-└── .kiro/
-    └── steering/           # Steering files terstruktur
-        ├── product.md      # Visi produk & konteks bisnis jastip
-        ├── tech.md         # Tech stack & konvensi
-        └── structure.md    # Peta file & tanggung jawab tiap bagian
+├── AGENTS.md
+├── CLAUDE.md
+└── .kiro/steering/
+    ├── product.md
+    ├── tech.md
+    └── structure.md
 ```
 
 ## Menjalankan secara lokal
 
-Tidak butuh tooling. Cukup buka berkas, atau jalankan server statis sederhana:
-
 ```bash
-# opsi 1: buka langsung
-open index.html        # macOS
-xdg-open index.html    # Linux
-
-# opsi 2: server lokal (disarankan agar path relatif konsisten)
 python3 -m http.server 8000
-# lalu buka http://localhost:8000
+# buka http://localhost:8000
 ```
 
-## Deploy ke GitHub Pages
+## Deploy
 
-1. Buka **Settings → Pages** di repository ini.
-2. Pada **Source**, pilih branch `main` dan folder `/ (root)`.
-3. Simpan. Situs akan tersedia di `https://<username>.github.io/jastip-claude/`.
-
-Karena semua path bersifat relatif, situs langsung jalan tanpa konfigurasi tambahan.
+Deploy otomatis ke Vercel dari branch `main`. Domain kustom: `jastip-in.web.id`.
 
 ## Yang perlu kamu ganti
 
-Beberapa nilai masih berupa contoh dan harus disesuaikan sebelum dipakai produksi:
-
 | Lokasi | Nilai contoh | Ganti dengan |
 |--------|--------------|--------------|
-| `index.html` (tombol WhatsApp & footer) | `6281200000000` | Nomor WhatsApp bisnis kamu (format internasional tanpa `+`) |
-| `index.html` (footer) | `halo@jastipin.id` | Email bisnis kamu |
-| Angka di bagian statistik | 38, 52.000+, 14.000+, 4,9 | Angka asli bisnismu |
+| `index.html` (WhatsApp & footer) | `6281200000000` | Nomor WhatsApp bisnis (`62...`) |
+| `index.html` (footer) | `halo@jastipin.id` | Email bisnis |
+| Statistik | 38, 52.000+, 14.000+, 4,9 | Angka asli bisnis |
 | Testimoni | Rani, Dimas, Carissa | Testimoni pelanggan asli |
+| `sitemap.xml` → `<lastmod>` | `2026-06-23` | Update saat ada perubahan konten besar |
 
 ## Desain
 
@@ -88,8 +94,6 @@ Beberapa nilai masih berupa contoh dan harus disesuaikan sebelum dipakai produks
 | Latar | Krem `#faf6ee` |
 | Tipografi | Plus Jakarta Sans |
 | Radius | 16px (kartu), pill (tombol) |
-
-Arah desain dipilih untuk terasa hangat, modern, dan tepercaya, sengaja menghindari gaya gradient ungu generik. Detail standar desain ada di `.kiro/steering/tech.md`.
 
 ## Lisensi
 

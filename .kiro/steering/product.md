@@ -4,24 +4,35 @@
 
 Jastipin adalah layanan **jasa titip (jastip)**: pelanggan menitipkan pembelian barang kepada personal shopper, lalu membayar harga barang ditambah biaya titip dan ongkir. Situs ini adalah landing page yang mengubah pengunjung menjadi pelanggan yang mau memulai titipan lewat WhatsApp.
 
-## Konteks bisnis jastip (hasil riset)
+**URL live:** https://jastip-in.web.id
 
-- Jastip populer di Indonesia untuk barang yang sulit didapat lokal: skincare dan kosmetik Korea/Jepang, sneakers dan fashion rilisan terbatas, gadget yang belum rilis resmi, serta snack dan makanan impor.
-- Model pendapatan: biaya titip (flat atau persentase per barang) di atas harga barang, plus ongkir.
-- Hambatan terbesar konversi adalah **risiko kepercayaan**: pelanggan bayar di muka untuk barang yang belum dipegang, sering ke penjual yang belum dikenal.
-- Pemenang di pasar ini adalah yang paling transparan dan paling komunikatif (update di tiap tahap).
+## Ekosistem produk
+
+| Komponen | Repo | Keterangan |
+|----------|------|------------|
+| Landing page (ini) | `jastip-claude` | Situs statis, deploy ke Vercel, domain `jastip-in.web.id` |
+| Aplikasi mobile | `jastip-mobile-claude` | Expo SDK 54, React Native |
+
+File `callback.html` di repo ini berfungsi sebagai halaman redirect OAuth Google untuk aplikasi mobile.
+
+## Konteks bisnis jastip
+
+- Jastip populer di Indonesia untuk barang sulit didapat lokal: skincare Korea/Jepang, sneakers rilisan terbatas, gadget belum rilis resmi, snack impor.
+- Model pendapatan: biaya titip (flat atau persentase) di atas harga barang, plus ongkir.
+- Hambatan terbesar konversi adalah **risiko kepercayaan**: pelanggan bayar di muka untuk barang yang belum dipegang.
+- Pemenang di pasar ini adalah yang paling transparan dan paling komunikatif.
 
 ## Siapa penggunanya
 
 - Pembeli Indonesia yang melek mobile, mayoritas akses lewat ponsel.
-- Sensitif harga tapi rela bayar premium untuk barang yang tidak tersedia di sini.
+- Sensitif harga tapi rela bayar premium untuk barang yang tidak tersedia lokal.
 - Hati-hati dan mudah ragu, butuh bukti sebelum percaya.
 
 ## Target halaman
 
 Tujuan tunggal: mendorong pengunjung menekan **Mulai Nitip** dan membuka chat WhatsApp.
 
-Pesan kunci yang harus selalu tersampaikan:
+Pesan kunci:
 1. Bisa titip barang dari mana saja.
 2. Harga transparan, tanpa biaya tersembunyi.
 3. Ada bukti dan update di setiap langkah.
@@ -29,8 +40,8 @@ Pesan kunci yang harus selalu tersampaikan:
 
 ## Nada komunikasi
 
-Hangat, jelas, meyakinkan, dan jujur. Hindari klaim berlebihan. Pakai Bahasa Indonesia kasual-profesional, bukan terjemahan kaku.
+Hangat, jelas, meyakinkan, dan jujur. Hindari klaim berlebihan. Pakai Bahasa Indonesia kasual-profesional. Tanpa em-dash.
 
 ## Di luar cakupan (saat ini)
 
-Tidak ada katalog produk, keranjang, akun, atau pembayaran on-site. Transaksi terjadi lewat WhatsApp. Jangan menambah fitur ini tanpa keputusan produk yang jelas.
+Tidak ada katalog produk, keranjang, akun, atau pembayaran on-site. Transaksi terjadi lewat WhatsApp.
