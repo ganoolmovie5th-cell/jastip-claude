@@ -22,8 +22,19 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 - Responsif penuh dari mobile (390px) hingga desktop.
 - Animasi scroll-reveal hemat yang menghormati `prefers-reduced-motion`.
 - Menu mobile, navigasi sticky, dan accordion FAQ tanpa dependensi.
-- Aksesibilitas dasar: skip link, kontras warna AA, atribut alt, dan label ARIA.
-- Gambar produk dihasilkan khusus, disimpan lokal di `assets/`.
+- Aksesibilitas WCAG AA: skip link, kontras tombol 5.34:1, heading sequential, atribut alt, label ARIA.
+- Gambar produk disimpan lokal di `assets/`.
+- Security headers via `vercel.json` (CSP, X-Content-Type-Options, X-Frame-Options, dst.).
+- SEO lengkap: Open Graph, Twitter Card, JSON-LD LocalBusiness schema, `robots.txt`, `sitemap.xml`.
+
+## Kontak & Operasional
+
+| Item | Nilai |
+|------|-------|
+| WhatsApp | `628118696940` |
+| Email | `halo@jastipin.id` |
+| Jam operasional | Senin – Minggu, 09.00 – 22.00 WIB |
+| Metode pembayaran | Transfer BCA, GoPay, OVO, DANA, ShopeePay |
 
 ## Analytics & Tracking
 
@@ -36,7 +47,10 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 ## SEO
 
 - `sitemap.xml` tersedia di: `https://jastip-in.web.id/sitemap.xml`
+- `robots.txt` tersedia di: `https://jastip-in.web.id/robots.txt`
 - Tag `<link rel="canonical">` mengarah ke `https://jastip-in.web.id/`
+- Open Graph & Twitter Card tags tersedia di `<head>`
+- JSON-LD `LocalBusiness` schema di `<body>` sebelum `</body>`
 - Daftarkan sitemap ke [Google Search Console](https://search.google.com/search-console)
 
 ## Struktur proyek
@@ -47,6 +61,8 @@ jastip-claude/
 ├── styles.css              # Design system + seluruh styling
 ├── app.js                  # Nav, menu mobile, scroll-reveal
 ├── sitemap.xml             # Sitemap untuk SEO
+├── robots.txt              # Robots direktif + pointer ke sitemap
+├── vercel.json             # Security headers (CSP, X-Content-Type, dll.)
 ├── callback.html           # Redirect OAuth Google (untuk app mobile)
 ├── favicon.svg             # Favicon branded
 ├── assets/                 # Gambar produk lokal
@@ -77,20 +93,19 @@ Deploy otomatis ke Vercel dari branch `main`. Domain kustom: `jastip-in.web.id`.
 
 ## Yang perlu kamu ganti
 
-| Lokasi | Nilai contoh | Ganti dengan |
-|--------|--------------|--------------|
-| `index.html` (WhatsApp & footer) | `6281200000000` | Nomor WhatsApp bisnis (`62...`) |
-| `index.html` (footer) | `halo@jastipin.id` | Email bisnis |
-| Statistik | 38, 52.000+, 14.000+, 4,9 | Angka asli bisnis |
-| Testimoni | Rani, Dimas, Carissa | Testimoni pelanggan asli |
-| `sitemap.xml` → `<lastmod>` | `2026-06-23` | Update saat ada perubahan konten besar |
+| Lokasi | Nilai saat ini | Status |
+|--------|----------------|--------|
+| Statistik hero | 38 negara, 52.000+ pesanan, 14.000+ pelanggan, 4,9/5 | Ganti dengan angka asli |
+| Testimoni | Rani, Dimas, Carissa | Ganti dengan testimoni pelanggan asli |
+| `sitemap.xml` → `<lastmod>` | `2026-06-24` | Update saat ada perubahan konten besar |
+| Eyebrow hero | "sejak 2019" | Sesuaikan tahun berdiri |
 
 ## Desain
 
 | Token | Nilai |
 |-------|-------|
 | Warna utama | Teal hijau `#0f5c4a` |
-| Aksen CTA | Oranye hangat `#e8762f` |
+| Aksen CTA | Oranye hangat `#e8762f` (teks gelap `#1b2420`, contrast 5.34:1) |
 | Latar | Krem `#faf6ee` |
 | Tipografi | Plus Jakarta Sans |
 | Radius | 16px (kartu), pill (tombol) |

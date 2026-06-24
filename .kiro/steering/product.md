@@ -38,6 +38,15 @@ Pesan kunci:
 3. Ada bukti dan update di setiap langkah.
 4. Prosesnya sederhana (empat langkah).
 
+## Informasi operasional
+
+| Item | Nilai |
+|------|-------|
+| WhatsApp | `628118696940` |
+| Email | `halo@jastipin.id` |
+| Jam operasional | Senin – Minggu, 09.00 – 22.00 WIB |
+| Metode pembayaran | Transfer BCA, GoPay, OVO, DANA, ShopeePay |
+
 ## Nada komunikasi
 
 Hangat, jelas, meyakinkan, dan jujur. Hindari klaim berlebihan. Pakai Bahasa Indonesia kasual-profesional. Tanpa em-dash.
