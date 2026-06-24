@@ -62,8 +62,8 @@ a { color: inherit; text-decoration: none; }
   transition: transform .15s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .btn:active { transform: translateY(1px); }
-.btn--solid { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(232, 118, 47, .28); }
-.btn--solid:hover { background: var(--accent-strong); }
+.btn--solid { background: var(--accent); color: var(--ink); box-shadow: 0 6px 18px rgba(232, 118, 47, .28); }
+.btn--solid:hover { background: var(--accent); box-shadow: 0 10px 26px rgba(232, 118, 47, .42); transform: translateY(-1px); }
 .btn--ghost { background: transparent; color: var(--brand); border-color: var(--brand-soft); }
 .btn--ghost:hover { border-color: var(--brand); background: var(--brand-soft); }
 .btn--on-dark { color: #fff; border-color: rgba(255,255,255,.45); }
@@ -215,7 +215,7 @@ a { color: inherit; text-decoration: none; }
 .footer { background: var(--ink); color: #cdd6d1; padding: 56px 0 28px; }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
 .footer__brand p { margin: 14px 0 0; max-width: 32ch; font-size: .94rem; color: #9fb0a8; }
-.footer__col h4 { color: #fff; font-size: .92rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 14px; }
+.footer__col h3 { color: #fff; font-size: .92rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 14px; }
 .footer__col a { display: block; color: #b9c5bf; font-size: .96rem; padding: 5px 0; transition: color .15s ease; }
 .footer__col a:hover { color: #fff; }
 .footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); font-size: .86rem; color: #8fa099; }
@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
   .nav__mobile { display: grid; gap: 4px; padding: 12px 20px 20px; background: var(--bg); border-bottom: 1px solid var(--line); }
   .nav__mobile a { padding: 12px 4px; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--line); }
   .nav__mobile a:last-child { border: 0; margin-top: 8px; }
-  .nav__mobile .btn { color: #fff; }
+  .nav__mobile .btn--ghost { color: var(--brand); }
 }
 
 @media (max-width: 560px) {
