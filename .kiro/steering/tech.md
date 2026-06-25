@@ -8,6 +8,7 @@
 - **Tanpa build step, tanpa framework, tanpa npm.**
 - Font dari Google Fonts (Plus Jakarta Sans). Gambar disimpan lokal di `assets/`.
 - Deploy otomatis ke **Vercel** dari branch `main`. Domain: `jastip-in.web.id`.
+- Security headers dikonfigurasi via `vercel.json`.
 
 ## Analytics & Tracking
 
@@ -34,9 +35,25 @@ Jangan mengubah urutan ini.
 ## SEO
 
 - `sitemap.xml` di root → `https://jastip-in.web.id/sitemap.xml`
+- `robots.txt` di root → `Disallow: /callback.html`, pointer ke sitemap
 - `<link rel="canonical">` di `<head>` → `https://jastip-in.web.id/`
-- `<link rel="sitemap">` di `<head>` → `/sitemap.xml`
+- Open Graph tags (`og:title`, `og:description`, `og:image`, dll.) di `<head>`
+- Twitter Card tags di `<head>`
+- JSON-LD `LocalBusiness` schema di `<body>` sebelum `</body>`
 - Update `<lastmod>` di `sitemap.xml` setiap ada perubahan konten signifikan.
+- `sitemap.xml` diberi header `X-Robots-Tag: noindex` via `vercel.json` agar tidak di-crawl sebagai halaman HTML.
+
+## Security headers (`vercel.json`)
+
+| Header | Nilai |
+|--------|-------|
+| `X-Content-Type-Options` | `nosniff` |
+| `X-Frame-Options` | `SAMEORIGIN` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` |
+| `Content-Security-Policy` | Covers: self, GA4, GTM, Google Fonts, Vercel Analytics |
+
+CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, dan Google Fonts. Jangan hapus domain yang sudah ada di CSP tanpa memeriksa apakah masih dipakai.
 
 ## Design system (sumber kebenaran di `:root` styles.css)
 
@@ -54,9 +71,19 @@ Jangan mengubah urutan ini.
 ## Aturan desain
 
 - **Satu warna aksen** — hanya `--accent` untuk semua CTA.
+- **Kontras tombol:** `.btn--solid` menggunakan `color: var(--ink)` (bukan `#fff`) untuk contrast ratio 5.34:1 — WCAG AA. Jangan ubah ke `#fff`.
 - **Tanpa em-dash** di seluruh teks.
 - Gambar selalu punya `alt`, `width`, `height`, dan `loading`.
 - Semua animasi wajib off saat `prefers-reduced-motion: reduce`.
+- **H1 tidak boleh dibungkus `.reveal`** — LCP element harus langsung visible. Class `reveal` hanya boleh dipakai pada elemen non-critical di dalam hero copy.
+
+## Heading structure
+
+- Halaman menggunakan struktur `h1 → h2 → h3` secara sequential.
+- `h1`: judul hero (satu per halaman).
+- `h2`: judul setiap section.
+- `h3`: sub-item dalam section (steps, tiles, fees, quotes, footer columns).
+- Jangan menggunakan `h4`-`h6` tanpa `h3` sebelumnya di context yang sama.
 
 ## Konvensi kode
 
