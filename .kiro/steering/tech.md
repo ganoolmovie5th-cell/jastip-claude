@@ -16,21 +16,20 @@ Tiga layer tracking di `index.html`, urutan wajib dipertahankan:
 
 ```html
 <head>
-  <!-- 1. Google Analytics 4 — G-PH1XJC9W3B -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH1XJC9W3B"></script>
-
-  <!-- 2. Vercel Web Analytics — auto-inject oleh Vercel -->
+  <!-- 1. Vercel Web Analytics — auto-inject oleh Vercel -->
   <script defer src="/_vercel/insights/script.js"></script>
 
-  <!-- 3. Google Tag Manager — GTM-WQ3THMWQ -->
+  <!-- 2. Google Tag Manager — GTM-WQ3THMWQ (GA4 G-PH1XJC9W3B dikelola di dalam GTM) -->
   <script>(function...GTM-WQ3THMWQ...)</script>
 </head>
 <body>
-  <!-- 4. GTM noscript fallback — wajib tepat setelah <body> -->
+  <!-- 3. GTM noscript fallback — wajib tepat setelah <body> -->
   <noscript><iframe src="...GTM-WQ3THMWQ..."></iframe></noscript>
 ```
 
 Jangan mengubah urutan ini.
+
+**Catatan GA4:** gtag.js langsung (`G-PH1XJC9W3B`) sudah DIHAPUS dari `<head>` untuk menghindari double-tracking. GA4 sekarang di-load penuh lewat GTM container `GTM-WQ3THMWQ` (tag GA4 Configuration ada di dalamnya). JANGAN tambahkan kembali snippet gtag.js langsung selama GA4 masih dikonfigurasi di GTM.
 
 ## SEO
 

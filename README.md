@@ -40,8 +40,8 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 
 | Tools | ID | Keterangan |
 |-------|----|------------|
-| Google Analytics 4 | `G-PH1XJC9W3B` | Event & konversi |
-| Google Tag Manager | `GTM-WQ3THMWQ` | Container tag terpusat |
+| Google Analytics 4 | `G-PH1XJC9W3B` | Event & konversi (dimuat lewat GTM, bukan gtag.js langsung) |
+| Google Tag Manager | `GTM-WQ3THMWQ` | Container tag terpusat — host GA4 |
 | Vercel Web Analytics | Auto | Page views & Web Vitals |
 
 ## SEO
