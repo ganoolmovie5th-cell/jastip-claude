@@ -53,7 +53,7 @@ Jangan mengubah urutan ini.
 | `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` |
 | `Content-Security-Policy` | Covers: self, GA4, GTM, Google Fonts, Vercel Analytics |
 
-CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, dan Google Fonts. Jangan hapus domain yang sudah ada di CSP tanpa memeriksa apakah masih dipakai.
+CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, Google Fonts, dan Cloudflare Insights (`static.cloudflareinsights.com` di `script-src` + `connect-src`, di-inject otomatis oleh Cloudflare di edge). Jangan hapus domain yang sudah ada di CSP tanpa memeriksa apakah masih dipakai.
 
 ## Design system (sumber kebenaran di `:root` styles.css)
 
@@ -72,6 +72,7 @@ CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, dan Google Fonts. J
 
 - **Satu warna aksen** — hanya `--accent` untuk semua CTA.
 - **Kontras tombol:** `.btn--solid` menggunakan `color: var(--ink)` (bukan `#fff`) untuk contrast ratio 5.34:1 — WCAG AA. Jangan ubah ke `#fff`.
+- **Kontras badge pembayaran:** `.pm-badge__logo` pakai teks putih, jadi background tiap brand wajib gelap (≥4.5:1). DANA `#0A6CC2` & ShopeePay `#C8401E` sudah didarken dari warna brand asli supaya lolos AA. Jangan kembalikan ke warna brand yang lebih terang (DANA `#108EE9`, ShopeePay `#EE4D2D`) tanpa mengganti warna teks.
 - **Tanpa em-dash** di seluruh teks.
 - Gambar selalu punya `alt`, `width`, `height`, dan `loading`.
 - Semua animasi wajib off saat `prefers-reduced-motion: reduce`.

@@ -251,8 +251,8 @@ a { color: inherit; text-decoration: none; }
 .pm-badge[data-pm="bca"]    .pm-badge__logo { background: #005B99; }
 .pm-badge[data-pm="gopay"]  .pm-badge__logo { background: #00880A; }
 .pm-badge[data-pm="ovo"]    .pm-badge__logo { background: #4C3494; }
-.pm-badge[data-pm="dana"]   .pm-badge__logo { background: #108EE9; }
-.pm-badge[data-pm="shopee"] .pm-badge__logo { background: #EE4D2D; }
+.pm-badge[data-pm="dana"]   .pm-badge__logo { background: #0A6CC2; }
+.pm-badge[data-pm="shopee"] .pm-badge__logo { background: #C8401E; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
