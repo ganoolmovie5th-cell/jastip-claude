@@ -38,8 +38,9 @@ jastip-claude/
 7. `#biaya` — tiga komponen biaya + badge metode pembayaran (BCA, GoPay, OVO, DANA, ShopeePay)
 8. `#testimoni` — kartu testimoni
 9. `#faq` — accordion `<details>` termasuk FAQ jam operasional & metode pembayaran
-10. `section.cta#kontak` — ajakan WhatsApp
-11. `footer.footer` — tautan, kontak (WA + email + jam operasional), hak cipta
+10. `#panduan` — blok panduan singkat: cascade heading `h2→h3→h4→h5→h6` (×2 kolom) + tautan internal ke `#cara-kerja`, `#kategori`, `#biaya`, `#faq`, `#kenapa`. Penting untuk internal linking + kedalaman heading crawler, jangan dihapus.
+11. `section.cta#kontak` — ajakan WhatsApp
+12. `footer.footer` — tautan, kontak (WA + email + jam operasional), hak cipta
 
 ## Tentang `callback.html`
 

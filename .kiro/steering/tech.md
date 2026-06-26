@@ -79,11 +79,12 @@ CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, dan Google Fonts. J
 
 ## Heading structure
 
-- Halaman menggunakan struktur `h1 → h2 → h3` secara sequential.
+- Halaman menggunakan struktur `h1 → h2 → h3` secara sequential di sebagian besar section.
 - `h1`: judul hero (satu per halaman).
 - `h2`: judul setiap section.
 - `h3`: sub-item dalam section (steps, tiles, fees, quotes, footer columns).
-- Jangan menggunakan `h4`-`h6` tanpa `h3` sebelumnya di context yang sama.
+- Section `#panduan` punya cascade lengkap `h2→h3→h4→h5→h6` (sequential, no-skip) untuk kedalaman heading SEO. Ini satu-satunya tempat `h4`-`h6` dipakai.
+- Di luar `#panduan`, jangan menggunakan `h4`-`h6` tanpa `h3` sebelumnya di context yang sama, dan jangan melompati level.
 
 ## Konvensi kode
 
