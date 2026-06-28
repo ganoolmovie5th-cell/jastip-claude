@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/ganoolmovie5th-cell/jastip-claude/issues"
   },
-  "homepage": "https://github.com/ganoolmovie5th-cell/jastip-claude#readme",
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1"
-  }
+  "homepage": "https://github.com/ganoolmovie5th-cell/jastip-claude#readme"
 }

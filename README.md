@@ -113,3 +113,8 @@ Deploy otomatis ke Vercel dari branch `main`. Domain kustom: `jastip-in.web.id`.
 ## Lisensi
 
 Bebas dipakai dan dimodifikasi untuk kebutuhan bisnis jastip kamu.
+
+## Pembersihan Kode / Ponytail Audit (Juni 2026)
+
+- Hapus dependency tak terpakai `@vercel/analytics` di `package.json` (analytics dimuat otomatis via script Vercel, bukan paket npm).
+- Hapus selector CSS mati `.footer__note` di `styles.css`.

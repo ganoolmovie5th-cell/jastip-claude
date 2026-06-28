@@ -95,3 +95,8 @@ CSP di-scope agar kompatibel dengan GA4, GTM inline scripts, Google Fonts, dan C
 ## Verifikasi sebelum selesai
 
 Render di lebar 390px dan 1280px. Pastikan tidak ada em-dash, tidak ada dependensi baru, dan semua script tracking masih ada dan dalam urutan yang benar.
+
+## Pembersihan Kode / Ponytail Audit (Juni 2026)
+
+- **`package.json`**: hapus dependency tak terpakai `@vercel/analytics` (tidak pernah di-import; Web Analytics dimuat via inline shim `/_vercel/insights/script.js`). Konsisten dengan prinsip "tanpa build step, tanpa npm".
+- **`styles.css`**: hapus selector mati `.footer__note` (tidak ada di markup `index.html`).
