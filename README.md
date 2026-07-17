@@ -15,6 +15,8 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 - Proses empat langkah yang mudah dipahami.
 - Testimoni dan angka kepercayaan.
 - FAQ yang menjawab keberatan paling umum.
+- Trust badges: established, verified, secure, 24/7 support.
+- Price calculator modal: hitung otomatis biaya + ongkir + total.
 
 ## Fitur
 
