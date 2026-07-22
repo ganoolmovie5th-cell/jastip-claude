@@ -277,6 +277,7 @@ a { color: inherit; text-decoration: none; }
 .calc-result { background: var(--bg); padding: 16px; border-radius: 6px; margin: 16px 0; }
 .calc-result p { display: flex; justify-content: space-between; font-size: .9rem; margin: 6px 0; }
 .calc-total { font-weight: 700; font-size: 1rem; border-top: 1px solid var(--line); padding-top: 10px; }
+#calcBtn { display: block; margin: 0 auto; }
 
 /* ===== Responsive ===== */
 @media (max-width: 920px) {
