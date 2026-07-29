@@ -4,7 +4,7 @@
 
 Jastipin adalah layanan **jasa titip (jastip)**: pelanggan menitipkan pembelian barang kepada personal shopper, lalu membayar harga barang ditambah biaya titip dan ongkir. Situs ini adalah landing page yang mengubah pengunjung menjadi pelanggan yang mau memulai titipan lewat WhatsApp.
 
-**URL live:** https://jastip-in.web.id
+**URL live:** https://www.jastip-in.web.id (apex 308-redirect ke www)
 
 ## Ekosistem produk
 

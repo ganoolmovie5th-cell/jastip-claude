@@ -2,7 +2,7 @@
 
 Landing page untuk layanan **jasa titip (jastip)** belanja, dibuat sebagai situs statis ringan tanpa proses build. Konsep, copy, dan desain dibangun berdasarkan riset model bisnis jastip di Indonesia: pembeli menitipkan barang yang sulit didapat (skincare, fashion, gadget, snack impor) kepada personal shopper, lalu membayar harga barang ditambah biaya titip dan ongkir.
 
-**Live:** [https://jastip-in.web.id](https://jastip-in.web.id)
+**Live:** [https://www.jastip-in.web.id](https://www.jastip-in.web.id)
 
 ![Pratinjau Jastipin](assets/hero.jpg)
 
@@ -48,9 +48,10 @@ Bisnis jastip sepenuhnya bergantung pada **kepercayaan**: pelanggan membayar di 
 
 ## SEO
 
-- `sitemap.xml` tersedia di: `https://jastip-in.web.id/sitemap.xml`
-- `robots.txt` tersedia di: `https://jastip-in.web.id/robots.txt`
-- Tag `<link rel="canonical">` mengarah ke `https://jastip-in.web.id/`
+- `sitemap.xml` tersedia di: `https://www.jastip-in.web.id/sitemap.xml`
+- `robots.txt` tersedia di: `https://www.jastip-in.web.id/robots.txt`
+- Tag `<link rel="canonical">` mengarah ke `https://www.jastip-in.web.id/`
+- Semua URL pakai `www`. Domain apex 308-redirect ke `www`, jadi canonical apex tidak cocok dengan URL yang diindeks Google
 - Open Graph & Twitter Card tags tersedia di `<head>`
 - JSON-LD `LocalBusiness` schema di `<body>` sebelum `</body>`
 - Daftarkan sitemap ke [Google Search Console](https://search.google.com/search-console)

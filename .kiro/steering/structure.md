@@ -7,7 +7,7 @@ jastip-claude/
 ├── index.html        # Markup halaman + semua tag tracking (GA, GTM, Vercel)
 ├── styles.css        # Semua styling + token desain di :root
 ├── app.js            # Interaksi: nav sticky, menu mobile, scroll-reveal
-├── sitemap.xml       # Sitemap SEO → https://jastip-in.web.id/sitemap.xml
+├── sitemap.xml       # Sitemap SEO → https://www.jastip-in.web.id/sitemap.xml
 ├── robots.txt        # Robots direktif: Disallow /callback.html, pointer ke sitemap
 ├── vercel.json       # Security headers: CSP, X-Content-Type-Options, X-Frame-Options, dll.
 ├── callback.html     # Redirect OAuth Google untuk app mobile (jastip-mobile-claude)
@@ -46,7 +46,7 @@ jastip-claude/
 
 Halaman redirect OAuth Google untuk `jastip-mobile-claude`. Alurnya:
 
-1. App mobile kirim request OAuth dengan `redirect_uri = https://jastip-in.web.id/callback.html`
+1. App mobile kirim request OAuth dengan `redirect_uri = https://jastip-claude.vercel.app/callback.html`. Bukan domain `web.id`: apex 308-redirect ke `www`, dan in-app browser bisa membuang fragment `#access_token` saat redirect. Lihat `jastip-mobile-claude/src/auth/AuthContext.js`
 2. Google redirect ke halaman ini dengan `#access_token=xxx&state=exp://...`
 3. Script baca token, redirect ke `state` URL (`exp://` deep link Expo Go)
 4. Expo Go intercept → login selesai
@@ -72,6 +72,6 @@ Rule sitemap harus **lebih dulu** dari rule global agar tidak tertimpa.
 | Token desain | `styles.css` — blok `:root` | Lihat `tech.md` |
 | GA4 ID | `index.html` | `G-PH1XJC9W3B` |
 | GTM ID | `index.html` | `GTM-WQ3THMWQ` |
-| Domain canonical | `index.html` | `https://jastip-in.web.id/` |
+| Domain canonical | `index.html` | `https://www.jastip-in.web.id/` |
 | JSON-LD schema | `index.html` — sebelum `</body>` | `LocalBusiness` |
 | Sitemap lastmod | `sitemap.xml` | Update tiap perubahan konten besar |

@@ -33,9 +33,10 @@ Jangan mengubah urutan ini.
 
 ## SEO
 
-- `sitemap.xml` di root → `https://jastip-in.web.id/sitemap.xml`
+- `sitemap.xml` di root → `https://www.jastip-in.web.id/sitemap.xml`
 - `robots.txt` di root → `Disallow: /callback.html`, pointer ke sitemap
-- `<link rel="canonical">` di `<head>` → `https://jastip-in.web.id/`
+- `<link rel="canonical">` di `<head>` → `https://www.jastip-in.web.id/`
+- Selalu pakai `www`. Apex 308-redirect ke `www`, jadi URL apex tidak cocok dengan yang diindeks Google
 - Open Graph tags (`og:title`, `og:description`, `og:image`, dll.) di `<head>`
 - Twitter Card tags di `<head>`
 - JSON-LD `LocalBusiness` schema di `<body>` sebelum `</body>`
