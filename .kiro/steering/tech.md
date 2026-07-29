@@ -40,7 +40,7 @@ Jangan mengubah urutan ini.
 - Open Graph tags (`og:title`, `og:description`, `og:image`, dll.) di `<head>`
 - Twitter Card tags di `<head>`
 - JSON-LD `LocalBusiness` schema di `<body>` sebelum `</body>`
-- Update `<lastmod>` di `sitemap.xml` setiap ada perubahan konten signifikan.
+- `sitemap.xml` sengaja tanpa `<lastmod>`. Field itu opsional, dan versi hardcoded sebelumnya sudah basi (README menyebut `2026-06-24`, file berisi `2026-07-26`). `<lastmod>` yang salah bikin Google berhenti memercayainya untuk seluruh sitemap, jadi lebih baik tidak ada daripada bohong. Jangan tambahkan kembali kecuali nilainya benar-benar bisa dijaga akurat.
 - `sitemap.xml` diberi header `X-Robots-Tag: noindex` via `vercel.json` agar tidak di-crawl sebagai halaman HTML.
 
 ## Security headers (`vercel.json`)

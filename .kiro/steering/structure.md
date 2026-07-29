@@ -74,4 +74,4 @@ Rule sitemap harus **lebih dulu** dari rule global agar tidak tertimpa.
 | GTM ID | `index.html` | `GTM-WQ3THMWQ` |
 | Domain canonical | `index.html` | `https://www.jastip-in.web.id/` |
 | JSON-LD schema | `index.html` — sebelum `</body>` | `LocalBusiness` |
-| Sitemap lastmod | `sitemap.xml` | Update tiap perubahan konten besar |
+| Sitemap lastmod | `sitemap.xml` | Tidak dipakai, sengaja dihapus. Lihat `tech.md` |

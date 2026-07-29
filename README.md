@@ -100,7 +100,6 @@ Deploy otomatis ke Vercel dari branch `main`. Domain kustom: `jastip-in.web.id`.
 |--------|----------------|--------|
 | Statistik hero | 38 negara, 52.000+ pesanan, 14.000+ pelanggan, 4,9/5 | Ganti dengan angka asli |
 | Testimoni | Rani, Dimas, Carissa | Ganti dengan testimoni pelanggan asli |
-| `sitemap.xml` → `<lastmod>` | `2026-06-24` | Update saat ada perubahan konten besar |
 | Eyebrow hero | "sejak 2019" | Sesuaikan tahun berdiri |
 
 ## Desain
