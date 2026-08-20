@@ -11,3 +11,7 @@ Thumbs.db
 
 # Dependencies
 node_modules/
+
+# AI IDE config
+.kiro/
+.claude/
