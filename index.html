@@ -62,12 +62,20 @@
       <nav class="nav__links" aria-label="Navigasi utama">
         <a href="#cara-kerja">Cara Kerja</a>
         <a href="#kategori">Kategori</a>
-        <a href="#kenapa">Kenapa Kami</a>
         <a href="#biaya">Biaya</a>
+        <a href="#lacak">Lacak</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <div class="nav__tools">
+        <button class="icon-btn" id="shareBtn" type="button" aria-label="Bagikan halaman ini">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Ganti mode gelap/terang" aria-pressed="false">
+          <svg class="ico icon-btn__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="ico icon-btn__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
       <div class="nav__cta">
-        <a class="btn btn--ghost" href="#cara-kerja">Lihat cara kerja</a>
         <a class="btn btn--solid" href="#kontak">Mulai Nitip</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
@@ -79,6 +87,8 @@
       <a href="#kategori">Kategori</a>
       <a href="#kenapa">Kenapa Kami</a>
       <a href="#biaya">Biaya</a>
+      <a href="#galeri">Galeri Bukti</a>
+      <a href="#lacak">Lacak Resi</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn--solid btn--block" href="#kontak">Mulai Nitip</a>
     </div>
@@ -311,8 +321,85 @@
       </div>
     </section>
 
+    <!-- GALERI BUKTI -->
+    <section class="section" id="galeri">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Bukti nyata</p>
+          <h2 class="section__title">Kami tunjukkan setiap langkahnya</h2>
+          <p class="section__sub">Bukan cuma janji. Ini contoh bukti yang kamu terima di tiap pesanan: dari struk belanja sampai paket siap kirim.</p>
+        </div>
+        <div class="gallery">
+          <figure class="gallery__item" style="--img:url('assets/beauty.jpg')">
+            <figcaption><span class="gallery__tag">Foto struk</span>Bukti pembelian asli dari toko</figcaption>
+          </figure>
+          <figure class="gallery__item" style="--img:url('assets/fashion.jpg')">
+            <figcaption><span class="gallery__tag">Foto barang</span>Kondisi barang sebelum dikemas</figcaption>
+          </figure>
+          <figure class="gallery__item" style="--img:url('assets/gadget.jpg')">
+            <figcaption><span class="gallery__tag">Foto packing</span>Dikemas rapi &amp; aman</figcaption>
+          </figure>
+          <figure class="gallery__item" style="--img:url('assets/snacks.jpg')">
+            <figcaption><span class="gallery__tag">Foto resi</span>Nomor resi untuk kamu lacak</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LACAK RESI + ESTIMASI WAKTU -->
+    <section class="section section--tint" id="lacak">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Alat bantu</p>
+          <h2 class="section__title">Lacak paket &amp; cek estimasi waktu</h2>
+          <p class="section__sub">Sudah punya nomor resi? Lacak langsung di sini. Belum pesan? Lihat perkiraan lama kirim dari tiap negara Asia Tenggara.</p>
+        </div>
+        <div class="tools">
+          <div class="tool-card">
+            <h3>Lacak nomor resi</h3>
+            <form id="trackForm" class="track-form">
+              <div class="form-group">
+                <label for="courier">Kurir</label>
+                <select id="courier">
+                  <option value="jne">JNE</option>
+                  <option value="sicepat">SiCepat</option>
+                  <option value="jnt">J&amp;T Express</option>
+                  <option value="pos">POS Indonesia</option>
+                  <option value="anteraja">AnterAja</option>
+                  <option value="ninja">Ninja Xpress</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="trackNo">Nomor resi</label>
+                <input type="text" id="trackNo" placeholder="Contoh: 0012345678901" autocomplete="off" required>
+              </div>
+              <button type="submit" class="btn btn--solid btn--block">Lacak paket</button>
+              <p class="track-note" id="trackNote" hidden></p>
+            </form>
+          </div>
+          <div class="tool-card">
+            <h3>Estimasi waktu kirim (Asia Tenggara)</h3>
+            <table class="eta-table">
+              <thead>
+                <tr><th scope="col">Negara asal</th><th scope="col">Estimasi tiba</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>🇸🇬 Singapura</td><td>5 – 9 hari</td></tr>
+                <tr><td>🇲🇾 Malaysia</td><td>6 – 10 hari</td></tr>
+                <tr><td>🇹🇭 Thailand</td><td>7 – 12 hari</td></tr>
+                <tr><td>🇻🇳 Vietnam</td><td>8 – 14 hari</td></tr>
+                <tr><td>🇵🇭 Filipina</td><td>8 – 14 hari</td></tr>
+                <tr><td>🇧🇳 Brunei</td><td>7 – 12 hari</td></tr>
+              </tbody>
+            </table>
+            <p class="eta-note">Estimasi hari kerja, di luar proses bea cukai. Angka pasti disampaikan saat penawaran.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="section section--tint" id="faq">
+    <section class="section" id="faq">
       <div class="wrap faq">
         <div class="section__head section__head--left">
           <p class="eyebrow">Masih ragu?</p>
@@ -400,6 +487,12 @@
     </section>
   </main>
 
+  <!-- Sticky WhatsApp -->
+  <a class="wa-float" href="https://wa.me/628118696940?text=Halo%20Jastipin%2C%20saya%20mau%20nitip%20barang" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.18c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.37 1.46.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.71-.18 1.4Z"/></svg>
+    <span class="wa-float__label">Chat kami</span>
+  </a>
+
   <footer class="footer">
     <div class="wrap footer__grid">
       <div class="footer__brand">
@@ -483,6 +576,49 @@
     "paymentAccepted": "Bank Transfer, GoPay, OVO, DANA, ShopeePay"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara mulai nitip?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Klik tombol Mulai Nitip, lalu kirim link atau foto barang ke WhatsApp kami. Tim akan balas dengan rincian harga dalam beberapa jam pada jam kerja." }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah harus bayar penuh di depan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ya, pembayaran dilakukan setelah kamu setuju dengan total biaya. Ini supaya personal shopper bisa langsung membelanjakan barang sebelum stok habis." }
+      },
+      {
+        "@type": "Question",
+        "name": "Berapa lama barang sampai?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tergantung negara asal dan metode kirim, umumnya 7 sampai 21 hari kerja. Estimasi spesifik kami sampaikan di penawaran awal." }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana kalau barang salah atau rusak?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kalau kesalahan ada di pihak kami, barang diganti atau dana dikembalikan. Untuk kerusakan dari kurir, kami bantu proses klaim asuransi pengiriman." }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah semua barang bisa dititip?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hampir semua, kecuali barang yang dilarang masuk Indonesia atau melanggar aturan bea cukai. Kami akan kabari kalau ada kendala regulasi." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kapan tim Jastipin bisa dihubungi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tim kami siap membalas pesan setiap hari Senin sampai Minggu, pukul 09.00 sampai 22.00 WIB. Di luar jam tersebut, pesanmu tetap masuk dan akan kami balas segera saat operasional dimulai." }
+      },
+      {
+        "@type": "Question",
+        "name": "Metode pembayaran apa yang diterima?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kami menerima transfer bank BCA, serta e-wallet GoPay, OVO, DANA, dan ShopeePay. Detail rekening dan nomor e-wallet akan kami kirimkan bersamaan dengan rincian harga pesananmu." }
+      }
+    ]
+  }
+  </script>
 
   <!-- PRICE CALCULATOR MODAL -->
   <div class="modal" id="calcModal" hidden>
@@ -491,6 +627,25 @@
       <button class="modal__close" id="calcClose" aria-label="Tutup kalkulator">&times;</button>
       <h2>Hitung Total Hargamu</h2>
       <form id="calcForm" class="calc-form">
+        <div class="form-group">
+          <label for="currency">Mata uang toko asal</label>
+          <div class="calc-fx">
+            <select id="currency">
+              <option value="IDR" selected>🇮🇩 Rupiah (IDR)</option>
+              <option value="SGD">🇸🇬 Singapura (SGD)</option>
+              <option value="MYR">🇲🇾 Malaysia (MYR)</option>
+              <option value="THB">🇹🇭 Thailand (THB)</option>
+              <option value="PHP">🇵🇭 Filipina (PHP)</option>
+              <option value="VND">🇻🇳 Vietnam (VND)</option>
+              <option value="BND">🇧🇳 Brunei (BND)</option>
+              <option value="KHR">🇰🇭 Kamboja (KHR)</option>
+              <option value="LAK">🇱🇦 Laos (LAK)</option>
+              <option value="MMK">🇲🇲 Myanmar (MMK)</option>
+            </select>
+            <input type="number" id="foreignPrice" placeholder="0" min="0" step="0.01" inputmode="decimal">
+          </div>
+          <p class="calc-fx__note" id="fxNote" hidden></p>
+        </div>
         <div class="form-group">
           <label for="itemPrice">Harga barang (Rp)</label>
           <input type="number" id="itemPrice" placeholder="0" min="0" step="1000" required>
@@ -512,40 +667,15 @@
           <p><span>Biaya titip:</span> <span id="resFee">Rp 0</span></p>
           <p><span>Ongkir (estimasi):</span> <span id="resShip">Rp 0</span></p>
           <p class="calc-total"><span>Total:</span> <span id="resTotal">Rp 0</span></p>
+          <a class="btn btn--solid btn--block" id="calcWa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.18c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.37 1.46.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.71-.18 1.4Z"/></svg>
+            Nitip barang ini via WhatsApp
+          </a>
         </div>
-        <button type="submit" class="btn btn--solid btn--block">Hitung</button>
+        <button type="submit" class="btn btn--ghost btn--block">Hitung</button>
       </form>
     </div>
   </div>
 
-  <script>
-    const calcBtn = document.getElementById('calcBtn');
-    const calcModal = document.getElementById('calcModal');
-    const calcClose = document.getElementById('calcClose');
-    const calcOverlay = document.getElementById('calcOverlay');
-    const calcForm = document.getElementById('calcForm');
-    const calcResult = document.getElementById('calcResult');
-
-    calcBtn.addEventListener('click', () => { calcModal.hidden = false; });
-    calcClose.addEventListener('click', () => { calcModal.hidden = true; });
-    calcOverlay.addEventListener('click', () => { calcModal.hidden = true; });
-
-    calcForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const itemPrice = parseFloat(document.getElementById('itemPrice').value) || 0;
-      const weight = parseFloat(document.getElementById('weight').value) || 0;
-      const feePercent = parseFloat(document.getElementById('itemFeePercent').value) || 5;
-
-      const fee = Math.max(itemPrice * (feePercent / 100), 25000);
-      const shipCost = Math.max(Math.ceil(weight / 500) * 10000, 40000);
-      const total = itemPrice + fee + shipCost;
-
-      document.getElementById('resItem').textContent = 'Rp ' + itemPrice.toLocaleString('id-ID');
-      document.getElementById('resFee').textContent = 'Rp ' + Math.round(fee).toLocaleString('id-ID');
-      document.getElementById('resShip').textContent = 'Rp ' + shipCost.toLocaleString('id-ID');
-      document.getElementById('resTotal').textContent = 'Rp ' + Math.round(total).toLocaleString('id-ID');
-      calcResult.hidden = false;
-    });
-  </script>
 </body>
 </html>
