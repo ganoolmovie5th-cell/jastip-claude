@@ -112,11 +112,10 @@
     anteraja: "https://anteraja.id/tracking",
     ninja: "https://www.ninjaxpress.co/id-id/tracking?id={no}"
   };
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  var run = function () {
     var courier = document.getElementById("courier").value;
     var no = document.getElementById("trackNo").value.trim();
-    if (!no) return;
+    if (!no) { if (note) { note.hidden = false; note.textContent = "Masukkan nomor resi dulu."; } return; }
     var base = urls[courier];
     var url = base.indexOf("{no}") > -1 ? base.replace("{no}", encodeURIComponent(no)) : base;
     var win = window.open(url, "_blank", "noopener");
@@ -126,7 +125,10 @@
         ? "Membuka halaman lacak " + courier.toUpperCase() + ". Tempel nomor resi " + no + " bila belum terisi otomatis."
         : "Popup diblokir. Izinkan popup lalu coba lagi.";
     }
-  });
+  };
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(); });
+  var runBtn = document.getElementById("trackRun");
+  if (runBtn) runBtn.addEventListener("click", run);
 })();
 
 /* ===== Price calculator + SEA currency converter ===== */
@@ -195,8 +197,7 @@
   if (overlay) overlay.addEventListener("click", function () { open(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) open(false); });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  var run = function () {
     var price = parseFloat(itemPrice.value) || 0;
     var weight = parseFloat(document.getElementById("weight").value) || 0;
     var feePercent = parseFloat(document.getElementById("itemFeePercent").value) || 5;
@@ -223,5 +224,8 @@
         "- Total estimasi: " + fmt(total);
       waBtn.href = "https://wa.me/628118696940?text=" + encodeURIComponent(msg);
     }
-  });
+  };
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(); });
+  var runBtn = document.getElementById("calcRun");
+  if (runBtn) runBtn.addEventListener("click", run);
 })();
