@@ -57,12 +57,12 @@
   var btn = document.getElementById("themeBtn");
   var stored = null;
   try { stored = localStorage.getItem("theme"); } catch (e) {}
-  var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   var apply = function (dark) {
     root.classList.toggle("dark", dark);
     if (btn) btn.setAttribute("aria-pressed", String(dark));
   };
-  apply(stored ? stored === "dark" : prefersDark);
+  // Default light. Dark hanya kalau user pernah pilih manual.
+  apply(stored === "dark");
   if (btn) {
     btn.addEventListener("click", function () {
       var dark = !root.classList.contains("dark");
@@ -131,28 +131,16 @@
   if (runBtn) runBtn.addEventListener("click", run);
 })();
 
-/* ===== Price calculator + SEA currency converter ===== */
-(function () {
-  var modal = document.getElementById("calcModal");
-  if (!modal) return;
-  var btn = document.getElementById("calcBtn");
-  var close = document.getElementById("calcClose");
-  var overlay = document.getElementById("calcOverlay");
-  var form = document.getElementById("calcForm");
-  var result = document.getElementById("calcResult");
-  var currency = document.getElementById("currency");
-  var foreignPrice = document.getElementById("foreignPrice");
-  var itemPrice = document.getElementById("itemPrice");
-  var fxNote = document.getElementById("fxNote");
-  var waBtn = document.getElementById("calcWa");
-
-  // Fallback rate: berapa Rupiah per 1 unit mata uang (perkiraan, dipakai bila API gagal).
-  var fallback = { IDR: 1, SGD: 12100, MYR: 3650, THB: 470, PHP: 290, VND: 0.64, BND: 12100, KHR: 4, LAK: 0.75, MMK: 7.8 };
+/* ===== FX helper (dipakai kalkulator + konverter mini) ===== */
+var JastipFx = (function () {
+  // Fallback: berapa Rupiah per 1 unit mata uang (perkiraan, dipakai bila API gagal).
+  var fallback = {
+    IDR: 1, SGD: 12100, MYR: 3650, THB: 470, PHP: 290, VND: 0.64,
+    BND: 12100, KHR: 4, LAK: 0.75, MMK: 7.8,
+    USD: 16300, KRW: 11.5, JPY: 108, CNY: 2250, EUR: 17600
+  };
   var rates = null;      // IDR per 1 unit
   var fetchedAt = 0;
-
-  var fmt = function (n) { return "Rp " + Math.round(n).toLocaleString("id-ID"); };
-
   var loadRates = function () {
     // cache 6 jam
     if (rates && Date.now() - fetchedAt < 216e5) return Promise.resolve(rates);
@@ -172,6 +160,32 @@
       })
       .catch(function () { return fallback; });
   };
+  return {
+    fallback: fallback,
+    loadRates: loadRates,
+    isLive: function () { return !!rates; },
+    fmt: function (n) { return "Rp " + Math.round(n).toLocaleString("id-ID"); }
+  };
+})();
+
+/* ===== Price calculator ===== */
+(function () {
+  var modal = document.getElementById("calcModal");
+  if (!modal) return;
+  var btn = document.getElementById("calcBtn");
+  var close = document.getElementById("calcClose");
+  var overlay = document.getElementById("calcOverlay");
+  var form = document.getElementById("calcForm");
+  var result = document.getElementById("calcResult");
+  var currency = document.getElementById("currency");
+  var foreignPrice = document.getElementById("foreignPrice");
+  var itemPrice = document.getElementById("itemPrice");
+  var fxNote = document.getElementById("fxNote");
+  var waBtn = document.getElementById("calcWa");
+
+  var fallback = JastipFx.fallback;
+  var loadRates = JastipFx.loadRates;
+  var fmt = JastipFx.fmt;
 
   var convert = function () {
     var cur = currency.value;
@@ -184,7 +198,7 @@
       fxNote.hidden = false;
       fxNote.textContent = "1 " + cur + " \u2248 " + fmt(rate) + " \u00b7 " +
         amt.toLocaleString("id-ID") + " " + cur + " = " + fmt(rupiah) +
-        (rates ? " (kurs terkini)" : " (kurs perkiraan)");
+        (JastipFx.isLive() ? " (kurs terkini)" : " (kurs perkiraan)");
     });
   };
 
@@ -228,4 +242,74 @@
   form.addEventListener("submit", function (e) { e.preventDefault(); run(); });
   var runBtn = document.getElementById("calcRun");
   if (runBtn) runBtn.addEventListener("click", run);
+})();
+
+/* ===== Konverter mata uang mini (standalone) ===== */
+(function () {
+  var amount = document.getElementById("fxAmount");
+  var currency = document.getElementById("fxCurrency");
+  var out = document.getElementById("fxMiniOut");
+  var note = document.getElementById("fxMiniNote");
+  if (!amount || !currency || !out) return;
+
+  var fmt = JastipFx.fmt;
+  var render = function () {
+    var cur = currency.value;
+    var amt = parseFloat(amount.value) || 0;
+    if (amt <= 0) {
+      out.textContent = "Masukkan jumlah untuk melihat hasil.";
+      if (note) note.textContent = "";
+      return;
+    }
+    JastipFx.loadRates().then(function (rt) {
+      var rate = (rt && rt[cur]) || JastipFx.fallback[cur];
+      out.textContent = amt.toLocaleString("id-ID") + " " + cur + " \u2248 " + fmt(amt * rate);
+      if (note) {
+        note.textContent = "1 " + cur + " \u2248 " + fmt(rate) +
+          (JastipFx.isLive() ? " \u00b7 kurs terkini" : " \u00b7 kurs perkiraan");
+      }
+    });
+  };
+  currency.addEventListener("change", render);
+  amount.addEventListener("input", render);
+})();
+
+/* ===== Form nitip terstruktur -> pesan WhatsApp ===== */
+(function () {
+  var form = document.getElementById("orderForm");
+  if (!form) return;
+  var note = document.getElementById("orderNote");
+  var WA = "628118696940";
+
+  var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = val("ofName");
+    var link = val("ofLink");
+    if (!name || !link) {
+      if (note) { note.hidden = false; note.textContent = "Isi dulu nama dan link/nama barangnya."; }
+      return;
+    }
+    var country = val("ofCountry");
+    var lines = [
+      "Halo Jastipin, saya mau nitip barang.",
+      "- Nama: " + name,
+      "- Kategori: " + val("ofCategory"),
+      "- Barang: " + link,
+      "- Jumlah: " + (val("ofQty") || "1")
+    ];
+    if (country) lines.push("- Negara asal: " + country);
+    var noteVal = val("ofNote");
+    if (noteVal) lines.push("- Catatan: " + noteVal);
+
+    var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
+    var win = window.open(url, "_blank", "noopener");
+    if (note) {
+      note.hidden = false;
+      note.textContent = win
+        ? "Membuka WhatsApp dengan detail titipanmu. Tinggal kirim, ya."
+        : "Popup diblokir. Izinkan popup lalu coba lagi.";
+    }
+  });
 })();

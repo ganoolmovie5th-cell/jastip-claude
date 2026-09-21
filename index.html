@@ -378,6 +378,37 @@
             </form>
           </div>
           <div class="tool-card">
+            <h3>Konverter mata uang</h3>
+            <p class="fx-mini__lead">Cek perkiraan harga barang dalam Rupiah dengan kurs harian.</p>
+            <div class="fx-mini">
+              <div class="form-group">
+                <label for="fxAmount">Jumlah</label>
+                <input type="number" id="fxAmount" placeholder="0" min="0" step="0.01" inputmode="decimal" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="fxCurrency">Mata uang</label>
+                <select id="fxCurrency">
+                  <option value="SGD">🇸🇬 Singapura (SGD)</option>
+                  <option value="MYR">🇲🇾 Malaysia (MYR)</option>
+                  <option value="THB">🇹🇭 Thailand (THB)</option>
+                  <option value="PHP">🇵🇭 Filipina (PHP)</option>
+                  <option value="VND">🇻🇳 Vietnam (VND)</option>
+                  <option value="BND">🇧🇳 Brunei (BND)</option>
+                  <option value="KHR">🇰🇭 Kamboja (KHR)</option>
+                  <option value="LAK">🇱🇦 Laos (LAK)</option>
+                  <option value="MMK">🇲🇲 Myanmar (MMK)</option>
+                  <option value="USD">🇺🇸 Amerika (USD)</option>
+                  <option value="KRW">🇰🇷 Korea (KRW)</option>
+                  <option value="JPY">🇯🇵 Jepang (JPY)</option>
+                  <option value="CNY">🇨🇳 Tiongkok (CNY)</option>
+                  <option value="EUR">🇪🇺 Eropa (EUR)</option>
+                </select>
+              </div>
+            </div>
+            <p class="fx-mini__out" id="fxMiniOut" aria-live="polite">Masukkan jumlah untuk melihat hasil.</p>
+            <p class="fx-mini__note" id="fxMiniNote"></p>
+          </div>
+          <div class="tool-card">
             <h3>Estimasi waktu kirim (Asia Tenggara)</h3>
             <table class="eta-table">
               <thead>
@@ -467,6 +498,71 @@
             <h6>Masih punya pertanyaan?</h6>
             <p>Jawaban paling umum ada di <a href="#faq">FAQ</a>. Mau tahu alasan banyak orang percaya? Baca bagian <a href="#kenapa">kenapa kami</a>.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM NITIP TERSTRUKTUR -->
+    <section class="section section--tint" id="nitip">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Lebih rapi, lebih cepat</p>
+          <h2 class="section__title">Isi detail titipanmu</h2>
+          <p class="section__sub">Isi form ini, kami buatkan pesan WhatsApp yang rapi otomatis. Tim langsung paham barang yang kamu mau tanpa bolak-balik tanya.</p>
+        </div>
+        <div class="order-form-wrap">
+          <form id="orderForm" class="order-form tool-card">
+            <div class="order-form__grid">
+              <div class="form-group">
+                <label for="ofName">Nama <span class="req">*</span></label>
+                <input type="text" id="ofName" placeholder="Nama kamu" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="ofCategory">Kategori barang</label>
+                <select id="ofCategory">
+                  <option value="Fashion & sneakers">Fashion &amp; sneakers</option>
+                  <option value="Skincare & beauty">Skincare &amp; beauty</option>
+                  <option value="Gadget & elektronik">Gadget &amp; elektronik</option>
+                  <option value="Snack & makanan">Snack &amp; makanan</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+              <div class="form-group order-form__full">
+                <label for="ofLink">Link produk atau nama barang <span class="req">*</span></label>
+                <input type="text" id="ofLink" placeholder="Tempel link toko, atau tulis nama barangnya" autocomplete="off" required>
+              </div>
+              <div class="form-group">
+                <label for="ofQty">Jumlah</label>
+                <input type="number" id="ofQty" value="1" min="1" step="1" inputmode="numeric">
+              </div>
+              <div class="form-group">
+                <label for="ofCountry">Negara asal</label>
+                <select id="ofCountry">
+                  <option value="">Belum tahu / bebas</option>
+                  <option value="Singapura">🇸🇬 Singapura</option>
+                  <option value="Malaysia">🇲🇾 Malaysia</option>
+                  <option value="Thailand">🇹🇭 Thailand</option>
+                  <option value="Vietnam">🇻🇳 Vietnam</option>
+                  <option value="Filipina">🇵🇭 Filipina</option>
+                  <option value="Brunei">🇧🇳 Brunei</option>
+                  <option value="Amerika">🇺🇸 Amerika</option>
+                  <option value="Korea">🇰🇷 Korea</option>
+                  <option value="Jepang">🇯🇵 Jepang</option>
+                  <option value="Tiongkok">🇨🇳 Tiongkok</option>
+                  <option value="Eropa">🇪🇺 Eropa</option>
+                </select>
+              </div>
+              <div class="form-group order-form__full">
+                <label for="ofNote">Catatan (warna, ukuran, varian)</label>
+                <textarea id="ofNote" rows="3" placeholder="Contoh: ukuran 42, warna hitam, varian retinol 0.3%"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--solid btn--block btn--lg" id="orderSubmit">
+              <svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.18c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.37 1.46.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.71-.18 1.4Z"/></svg>
+              Kirim titipan via WhatsApp
+            </button>
+            <p class="order-form__note" id="orderNote" hidden></p>
+          </form>
         </div>
       </div>
     </section>
@@ -617,6 +713,49 @@
         "acceptedAnswer": { "@type": "Answer", "text": "Kami menerima transfer bank BCA, serta e-wallet GoPay, OVO, DANA, dan ShopeePay. Detail rekening dan nomor e-wallet akan kami kirimkan bersamaan dengan rincian harga pesananmu." }
       }
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Jasa titip belanja (personal shopper)",
+    "name": "Jastipin - Jasa Titip Belanja",
+    "description": "Layanan titip beli barang dari luar negeri: skincare, fashion, sneakers, gadget, dan snack impor. Harga transparan, bukti di tiap langkah, resi yang bisa dilacak.",
+    "url": "https://www.jastip-in.web.id",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Jastipin",
+      "url": "https://www.jastip-in.web.id",
+      "telephone": "+628118696940"
+    },
+    "areaServed": { "@type": "Country", "name": "Indonesia" },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://wa.me/628118696940",
+      "availableLanguage": "Indonesian"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "IDR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "IDR",
+        "minPrice": "25000",
+        "description": "Biaya titip mulai 5% per barang, minimal Rp25.000. Belum termasuk harga barang dan ongkir."
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Kategori titipan",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Titip Fashion & sneakers" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Titip Skincare & beauty" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Titip Gadget & elektronik" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Titip Snack & makanan khas" } }
+      ]
+    }
   }
   </script>
 
